@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Das and Bros Media Pvt Ltd</title>
+    <meta name="description" content="Empowering businesses with AI-driven marketing, cybersecurity, and digital transformation solutions.">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --primary-color: #007bff;
+            --secondary-color: #6c757d;
+            --accent-color: #ff6b6b;
+            --background-gradient: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: var(--background-gradient);
+            color: #333;
+            font-size: 18px;
+            line-height: 1.8;
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 48px;
+            margin: 0;
+            position: relative;
+            z-index: 2;
+            animation: fadeInDown 1s ease;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-size: 24px;
+            margin-top: 20px;
+            opacity: 0.9;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('header-pattern.svg') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        nav {
+            background: white;
+            box-shadow: var(--box-shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        nav ul li {
+            position: relative;
+            padding: 20px 25px;
+        }
+
+        nav ul li a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: color var(--transition-speed) ease;
+            position: relative;
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-color);
+            transition: width var(--transition-speed) ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('section-pattern.svg') repeat;
+            opacity: 0.05;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+            position: relative;
+            z-index: 2;
+        }
+
+        p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #555;
+            position: relative;
+            z-index: 2;
+        }
+
+        button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 18px 36px;
+            cursor: pointer;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: all var(--transition-speed) ease;
+            box-shadow: var(--box-shadow);
+            position: relative;
+            z-index: 2;
+        }
+
+        button:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        form input, form textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color var(--transition-speed) ease;
+        }
+
+        form input:focus, form textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 40px;
+            font-size: 16px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('footer-pattern.svg') repeat;
+            opacity: 0.1;
+            z-index: 1;
+        }
+
+        .faq-section {
+            text-align: left;
+            padding: 40px;
+            background: var(--background-gradient);
+        }
+
+        .client-login-section {
+            background: url('login-background.jpg') center/cover;
+            padding: 100px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .client-login-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .client-login-section * {
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Das and Bros Media Pvt Ltd</h1>
+        <p class="tagline">Innovative Solutions for the Digital Age</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>We offer a wide range of digital services to help your business grow.</p>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p>We are a team of passionate professionals dedicated to delivering innovative solutions.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Das and Bros Media Pvt Ltd. All rights reserved.</p>
+    </footer>
+</body>
+</html>
