@@ -2,12 +2,21 @@ import React from "react";
 
 const Testimonials = () => {
   return (
-    <section id="testimonials" className="bg-blue-100 py-16 text-center">
-      <h2 className="text-3xl font-bold mb-6">What Our Clients Say</h2>
-      <blockquote className="text-xl italic text-gray-700 max-w-lg mx-auto">
-        "Das & Bros Media transformed our online presence. Highly recommended!"
-        <br /><span className="font-bold">— Client A</span>
+    <section className="py-12 bg-white text-center">
+      <div className="text-2xl">⭐⭐⭐⭐⭐</div>
+      <blockquote className="text-xl font-semibold mt-4">
+        "Das and Bros Media transformed our marketing strategy, leading to unprecedented growth. Their expertise in digital transformation is unmatched!"
       </blockquote>
+      <div className="mt-4 flex items-center justify-center gap-4">
+        <div className="flex items-center">
+          <div className="w-10 h-10 bg-gray-300 rounded-full mr-2"></div>
+          <div>
+            <p className="font-semibold">Jane Doe</p>
+            <p className="text-sm text-gray-500">CEO, Tech Innovations</p>
+          </div>
+        </div>
+        <img src="https://via.placeholder.com/50" alt="Webflow logo" />
+      </div>
     </section>
   );
 };

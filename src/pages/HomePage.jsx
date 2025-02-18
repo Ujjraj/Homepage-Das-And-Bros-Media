@@ -1,9 +1,17 @@
 import React from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import Services from "../components/Services";
+import FeatureSection from "../components/FeatureSection";
+import FeaturesList from "../components/FeaturesList";
+import Benefits from "../components/Benefits";
+import About from "../components/About";
+import Blogs from "../components/Blogs";
+import Resources from "../components/Resources";
 import Testimonials from "../components/Testimonials";
-import LeadMagnet from "../components/LeadMagnet";
+import CTA from "../components/CTA";
+import EarlyAccess from "../components/EarlyAccess";
+import Team from "../components/Team";
+import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
 const HomePage = () => {
@@ -11,9 +19,17 @@ const HomePage = () => {
     <>
       <Header />
       <HeroSection />
-      <Services />
+      <FeatureSection />
+      <FeaturesList />
+      <Benefits />
+      <About />
+      <Blogs />
+      <Resources />
       <Testimonials />
-      <LeadMagnet />
+      <CTA />
+      <EarlyAccess />
+      <Team />
+      <Contact />
       <Footer />
     </>
   );
