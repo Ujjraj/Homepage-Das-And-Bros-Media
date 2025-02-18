@@ -29,7 +29,7 @@ const Blogs = () => {
       ];
     
       return (
-        <section className="py-12 bg-white text-center">
+        <section id="blog" className="py-12 bg-white text-center">
           <h2 className="text-lg font-semibold text-gray-500">Blog</h2>
           <h1 className="text-4xl font-bold mt-2">Insights and Innovations</h1>
           <p className="text-gray-600 mt-4 mb-8">Explore the latest trends in digital marketing.</p>
