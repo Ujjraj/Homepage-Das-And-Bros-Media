@@ -1,5 +1,5 @@
-// components/HeroSection.jsx
 import React from "react";
+import heroImage from "../assets/hero-image.jpg"; // Corrected relative import
 
 const HeroSection = () => {
   return (
@@ -18,8 +18,10 @@ const HeroSection = () => {
           <button className="border px-4 py-2">Learn More</button>
         </div>
       </div>
-      <div className="w-1/2 bg-gray-200 h-full min-h-screen flex items-center justify-center">
-        {/* Placeholder for image */}
+
+      {/* Image Section */}
+      <div className="w-1/2 h-full min-h-screen flex items-center justify-center">
+        <img src={heroImage} alt="Hero" className="w-full h-auto object-cover rounded-lg shadow-lg" />
       </div>
     </section>
   );
