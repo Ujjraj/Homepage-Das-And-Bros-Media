@@ -10,7 +10,6 @@ import Resources from "../components/Resources";
 import Testimonials from "../components/Testimonials";
 import CTA from "../components/CTA";
 import EarlyAccess from "../components/EarlyAccess";
-import Team from "../components/Team";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
@@ -28,7 +27,6 @@ const HomePage = () => {
       <Testimonials />
       <CTA />
       <EarlyAccess />
-      <Team />
       <Contact />
       <Footer />
     </>

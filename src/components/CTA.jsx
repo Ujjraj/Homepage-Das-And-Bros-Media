@@ -11,8 +11,12 @@ const CTA = () => {
             Contact us today to explore tailored solutions that drive growth and innovation for your business.
           </p>
           <div className="mt-4 flex gap-4">
-            <button className="px-6 py-2 bg-white text-black rounded-lg">Get Started</button>
-            <button className="px-6 py-2 border border-white rounded-lg">Request a Quote</button>
+            <button className="px-6 py-2 bg-white text-black rounded-lg cursor-pointer hover:bg-gray-200">
+              Get Started
+            </button>
+            <button className="px-6 py-2 border border-white rounded-lg cursor-pointer hover:bg-gray-700">
+              Request a Quote
+            </button>
           </div>
         </div>
         <div className="w-40 h-40 rounded-lg overflow-hidden">

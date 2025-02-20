@@ -14,14 +14,22 @@ const HeroSection = () => {
           effective funnels and elevate your business to new heights.
         </p>
         <div className="flex gap-4">
-          <button className="bg-black text-white px-4 py-2">Get Started</button>
-          <button className="border px-4 py-2">Learn More</button>
+          <button className="bg-black text-white px-4 py-2 cursor-pointer hover:bg-transparent hover:text-black hover:border hover:border-black transition-colors duration-200">
+            Get Started
+          </button>
+          <button className="border px-4 py-2 cursor-pointer transition-colors duration-200 hover:bg-black hover:text-white">
+            Learn More
+          </button>
         </div>
       </div>
 
       {/* Image Section */}
-      <div className="w-1/2 h-full min-h-screen flex items-center justify-center">
-        <img src={heroImage} alt="Hero" className="w-full h-auto object-cover rounded-lg shadow-lg" />
+      <div className="w-1/2 h-screen flex items-center justify-center">
+        <img
+          src={heroImage}
+          alt="Hero"
+          className="w-full h-full object-cover rounded-lg shadow-lg"
+        />
       </div>
     </section>
   );

@@ -63,7 +63,7 @@ const Blogs = () => {
         ))}
       </div>
       <div className="flex justify-center mt-8">
-        <button className="px-6 py-2 border border-black rounded-lg hover:bg-gray-100">
+        <button className="px-6 py-2 border border-black rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200">
           View all
         </button>
       </div>
