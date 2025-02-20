@@ -1,4 +1,7 @@
 import React from "react";
+import MarketROIImage from "../assets/Resources_Market-ROI.avif";
+import ProtectImage from "../assets/Resources_Protect.webp";
+import AIImage from "../assets/Resources_AI.avif";
 
 const Resources = () => {
     const blogPosts = [
@@ -9,6 +12,7 @@ const Resources = () => {
           author: "John Doe",
           date: "11 Jan 2022",
           readTime: "5 min read",
+          image: MarketROIImage,
         },
         {
           category: "Cybersecurity",
@@ -17,6 +21,7 @@ const Resources = () => {
           author: "Jane Smith",
           date: "12 Feb 2022",
           readTime: "6 min read",
+          image: ProtectImage,
         },
         {
           category: "AI",
@@ -25,6 +30,7 @@ const Resources = () => {
           author: "Alex Brown",
           date: "15 Mar 2022",
           readTime: "4 min read",
+          image: AIImage,
         },
       ];
     
@@ -36,8 +42,12 @@ const Resources = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {blogPosts.map((post, index) => (
               <div key={index} className="bg-gray-100 p-6 rounded-lg shadow-md">
-                <div className="h-40 bg-gray-300 flex items-center justify-center rounded-lg mb-4">
-                  <span className="text-gray-500">Image Placeholder</span>
+                <div className="h-40 w-full flex items-center justify-center rounded-lg mb-4 overflow-hidden">
+                  <img 
+                    src={post.image} 
+                    alt={post.title} 
+                    className="object-cover w-full h-full" 
+                  />
                 </div>
                 <p className="text-sm text-gray-500">{post.category}</p>
                 <h3 className="text-xl font-semibold mt-2">{post.title}</h3>
