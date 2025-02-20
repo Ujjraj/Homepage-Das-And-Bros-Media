@@ -10,9 +10,7 @@ const Contact = () => {
             <p><strong>Phone:</strong> <a href="tel:+14991726464" className="text-blue-500">+1 499 172-6464</a></p>
             <p><strong>Office:</strong> 456 Example Ave, Sydney NSW 2000 AU</p>
           </div>
-          <div className="mt-6 w-full h-48 bg-gray-300 flex items-center justify-center rounded-lg">
-            <span>Map Placeholder</span>
-          </div>
+        
         </section>
       );
 };
