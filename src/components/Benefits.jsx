@@ -6,7 +6,7 @@ const Benefits = () => {
     <section className="py-16 px-8 bg-gray-100">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-3xl font-bold mb-4">Unlock Your Business Potential with Us</h2>
+          <h2 className="text-3xl font-bold mb-4">Maximize Your Business Growth with Us</h2>
           <p className="text-gray-600 mb-6">
             Experience a remarkable boost in ROI with our tailored marketing
             strategies. Our innovative solutions ensure your systems are secure
