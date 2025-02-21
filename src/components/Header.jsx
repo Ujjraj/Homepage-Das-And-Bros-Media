@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -12,6 +13,7 @@ const Header = () => {
       dropdown: [
         { name: "Growth Marketing", href: "#growth-marketing" },
         { name: "Cybersecurity", href: "#cybersecurity" },
+  
         { name: "Funnel Building", href: "#funnel-building" },
         { name: "AI Marketing", href: "#ai-marketing" },
         { name: "Digital Transformation", href: "#digital-transformation" },
@@ -89,9 +91,9 @@ const Header = () => {
         </nav>
 
         {/* LOGIN BUTTON */}
-        <button className="hidden md:block border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
+        <Link to="/login" className="hidden md:block border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
           Login
-        </button>
+        </Link>
 
         {/* MOBILE MENU */}
         <button className="md:hidden text-gray-300 hover:text-white">
