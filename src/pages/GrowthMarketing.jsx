@@ -1,14 +1,15 @@
 import React from "react";
+import Header from "../components/Header";
 
 const GrowthMarketing = () => {
   return (
-    <section className="py-12 bg-white text-center">
-      <h2 className="text-3xl font-bold">Growth Marketing</h2>
-      <p className="text-gray-600 mt-4 mb-8">
-        Discover how our growth marketing strategies can elevate your business.
-      </p>
-      {/* Add more content specific to Growth Marketing */}
-    </section>
+    <>
+      <Header />
+      <div className="p-10">
+        <h1 className="text-3xl font-bold mb-4">Growth Marketing</h1>
+        <p>Details about Growth Marketing services...</p>
+      </div>
+    </>
   );
 };
 
