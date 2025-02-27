@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -21,7 +22,7 @@ const Header = () => {
     { name: "Industries We Serve", href: "/industries" },
     { name: "Case Studies", href: "/case-studies" },
     { name: "FAQ", href: "/faq" },
-    { name: "Blog", href: "/blog" },
+    { name: "Blog", href: "/#blog", isScrollLink: true },
     { name: "Contact Us", href: "/contact" },
     { name: "Hiring", href: "/hiring" },
   ];
