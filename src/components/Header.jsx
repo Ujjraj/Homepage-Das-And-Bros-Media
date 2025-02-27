@@ -7,23 +7,23 @@ const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const navItems = [
-    { name: "About Us", href: "#about" },
+    { name: "About Us", href: "/about" },
     {
       name: "Services",
       dropdown: [
-        { name: "Growth Marketing", href: "#growth-marketing" },
-        { name: "Cybersecurity", href: "#cybersecurity" },
-  
-        { name: "Funnel Building", href: "#funnel-building" },
-        { name: "AI Marketing", href: "#ai-marketing" },
-        { name: "Digital Transformation", href: "#digital-transformation" },
+        { name: "Growth Marketing", href: "/growth-marketing" },
+        { name: "Cybersecurity", href: "/cybersecurity" },
+        { name: "Funnel Building", href: "/funnel-building" },
+        { name: "AI Marketing", href: "/ai-marketing" },
+        { name: "Digital Transformation", href: "/digital-transformation" },
       ],
     },
-    { name: "Industries We Serve", href: "#industries" },
-    { name: "Case Studies", href: "#case-studies" },
-    { name: "FAQ", href: "#faq" },
-    { name: "Blog", href: "#blog" },
-    { name: "Contact Us", href: "#contact" },
+    { name: "Industries We Serve", href: "/industries" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "FAQ", href: "/faq" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact Us", href: "/contact" },
+    { name: "Hiring", href: "/hiring" },
   ];
 
   return (
@@ -64,26 +64,26 @@ const Header = () => {
                     {isDropdownOpen && (
                       <div className="absolute top-full left-0 bg-gray-800 text-white shadow-lg rounded-lg w-48 py-2">
                         {item.dropdown.map((subItem, subIndex) => (
-                          <a
+                          <Link
                             key={subIndex}
-                            href={subItem.href}
+                            to={subItem.href}
                             className="block px-4 py-2 hover:bg-gray-700 transition"
                           >
                             {subItem.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     )}
                   </div>
                 ) : (
-                  <a
-                    href={item.href}
+                  <Link
+                    to={item.href}
                     className="relative text-gray-300 hover:text-white transition-colors
                       before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 
                       before:bg-blue-400 before:transition-all hover:before:w-full"
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </li>
             ))}
