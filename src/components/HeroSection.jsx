@@ -24,11 +24,11 @@ const HeroSection = () => {
       </div>
 
       {/* Image Section */}
-      <div className="w-1/2 h-screen flex items-center justify-center">
+      <div className="w-1/2 h-screen flex items-center justify-center overflow-hidden">
         <img
           src={heroImage}
           alt="Hero"
-          className="w-full h-full object-cover rounded-lg shadow-lg"
+          className="w-full h-full object-cover rounded-lg shadow-lg transform scale-110"
         />
       </div>
     </section>
