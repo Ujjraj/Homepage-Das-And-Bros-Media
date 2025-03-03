@@ -1,16 +1,36 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 
+const countryCodes = [
+  { code: "+1", country: "USA" },
+  { code: "+44", country: "UK" },
+  { code: "+91", country: "India" },
+  { code: "+61", country: "Australia" },
+  { code: "+81", country: "Japan" },
+  { code: "+49", country: "Germany" },
+  { code: "+33", country: "France" },
+  { code: "+86", country: "China" },
+  { code: "+55", country: "Brazil" },
+  { code: "+7", country: "Russia" },
+];
+
 const ContactFormPopup = ({ isOpen, onClose }) => {
   const [service, setService] = useState("");
   const [email, setEmail] = useState("");
+  const [countryCode, setCountryCode] = useState("+1");
   const [phone, setPhone] = useState("");
+
+  const handlePhoneChange = (e) => {
+    const value = e.target.value.replace(/\D/g, ""); // Remove non-numeric characters
+    if (value.length <= 10) {
+      setPhone(value);
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log({ service, email, phone });
-    onClose(); // Close the popup after submission
+    console.log({ service, email, phone: `${countryCode} ${phone}` });
+    onClose();
   };
 
   return (
@@ -51,13 +71,26 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
             </div>
             <div className="mb-4">
               <label className="block text-gray-700 mb-2">Phone Number</label>
-              <input
-                type="tel"
-                value={phone}
-                onChange={(e) => setPhone(e.target.value)}
-                className="border rounded-lg w-full p-2"
-                required
-              />
+              <div className="flex">
+                <select
+                  value={countryCode}
+                  onChange={(e) => setCountryCode(e.target.value)}
+                  className="border rounded-lg p-2 mr-2"
+                >
+                  {countryCodes.map(({ code, country }) => (
+                    <option key={code} value={code}>{`${country} (${code})`}</option>
+                  ))}
+                </select>
+                <input
+                  type="tel"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  className="border rounded-lg w-full p-2"
+                  required
+                  pattern="\\d{10}"
+                  placeholder="Enter 10-digit number"
+                />
+              </div>
             </div>
             <button
               type="submit"
@@ -79,4 +112,4 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
   );
 };
 
-export default ContactFormPopup; 
+export default ContactFormPopup;
