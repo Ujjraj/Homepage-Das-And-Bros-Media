@@ -3,8 +3,8 @@ import heroImage from "../assets/hero-image.jpg"; // Corrected relative import
 
 const HeroSection = () => {
   return (
-    <section className="flex items-center justify-between p-10 w-full h-screen">
-      <div className="w-1/2">
+    <section className="flex items-center justify-between p-0 w-full h-screen">
+      <div className="w-1/2 p-10">
         <h1 className="text-4xl font-bold mb-4">
           Transform Your Business with Expert Solutions
         </h1>
