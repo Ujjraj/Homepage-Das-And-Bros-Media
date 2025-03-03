@@ -59,6 +59,7 @@ const JobPostings = () => {
             <label className="block mb-2">Upload your resume:</label>
             <input
               type="file"
+              accept=".pdf"
               onChange={(e) => setResume(e.target.files[0])}
               className="border rounded-lg p-2 w-full"
               required
