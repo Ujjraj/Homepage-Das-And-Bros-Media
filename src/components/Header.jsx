@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 import { Link } from "react-router-dom";
-import { Link as ScrollLink } from "react-scroll";
+import ContactFormPopup from "./ContactFormPopup";
 
 const Header = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   const navItems = [
     { name: "About Us", href: "/about" },
@@ -14,95 +15,92 @@ const Header = () => {
       dropdown: [
         { name: "Growth Marketing", href: "/growth-marketing" },
         { name: "Cybersecurity", href: "/cybersecurity" },
-        { name: "Funnel Building", href: "/funnel-building" },
-        { name: "AI Marketing", href: "/ai-marketing" },
         { name: "Digital Transformation", href: "/digital-transformation" },
+        { name: "Other Services & Partnerships", href: "/other-services-partnerships" },
       ],
     },
-    { name: "Industries We Serve", href: "/industries" },
-    { name: "Case Studies", href: "/case-studies" },
-    { name: "FAQ", href: "/faq" },
-    { name: "Blog", href: "/#blog", isScrollLink: true },
-    { name: "Contact Us", href: "/contact" },
+    { name: "Blog", href: "/#blog" },
+    { name: "Contact Us", href: "#", onClick: () => setIsPopupOpen(true) },
     { name: "Hiring", href: "/hiring" },
   ];
 
   return (
-    <motion.header 
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className="sticky top-0 h-16 md:h-20 bg-black backdrop-blur-md z-50 border-b border-gray-700 flex items-center"
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center w-full">
-        {/* LOGO */}
-        <div className="flex items-center space-x-2">
-          <Link to="/">
-            <img 
-              src="src/assets/logo.png"  
-              alt="Logo" 
-              className="h-12 md:h-16 lg:h-20 w-auto max-h-[50px]"
+    <>
+      <motion.header
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        className="sticky top-0 h-16 md:h-20 bg-black backdrop-blur-md z-50 border-b border-gray-700 flex items-center"
+      >
+        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center w-full">
+          {/* Logo */}
+          <Link to="/" className="flex-shrink-0">
+            <img
+              src="src/assets/logo.png"
+              alt="Logo"
+              className="h-10 md:h-14 w-auto"
             />
           </Link>
-        </div>
 
-        {/* NAVIGATION */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-8">
-            {navItems.map((item, index) => (
-              <li key={index} className="relative">
-                {/* DROPDOWN HANDLING */}
-                {item.dropdown ? (
-                  <div
-                    className="relative group"
-                    onMouseEnter={() => setIsDropdownOpen(true)}
-                    onMouseLeave={() => setIsDropdownOpen(false)}
-                  >
-                    <button className="text-gray-300 hover:text-white flex items-center space-x-1">
-                      {item.name}
-                      <FiChevronDown size={14} />
-                    </button>
+          {/* Navigation */}
+          <nav className="hidden md:flex flex-1 justify-center">
+            <ul className="flex space-x-6 lg:space-x-8">
+              {navItems.map((item, index) => (
+                <li key={index} className="relative">
+                  {item.dropdown ? (
+                    <div
+                      className="relative group"
+                      onMouseEnter={() => setIsDropdownOpen(true)}
+                      onMouseLeave={() => setIsDropdownOpen(false)}
+                    >
+                      <button className="text-gray-300 hover:text-white flex items-center space-x-1">
+                        {item.name}
+                        <FiChevronDown size={14} />
+                      </button>
 
-                    {/* DROPDOWN MENU */}
-                    {isDropdownOpen && (
-                      <div className="absolute top-full left-0 bg-gray-800 text-white shadow-lg rounded-lg w-48 py-2">
-                        {item.dropdown.map((subItem, subIndex) => (
-                          <Link
-                            key={subIndex}
-                            to={subItem.href}
-                            className="block px-4 py-2 hover:bg-gray-700 transition"
-                          >
-                            {subItem.name}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link
-                    to={item.href}
-                    className="relative text-gray-300 hover:text-white transition-colors
+                      {isDropdownOpen && (
+                        <div className="absolute top-full left-1/2 transform -translate-x-1/2 bg-gray-800 text-white shadow-lg rounded-lg w-52 py-2">
+                          {item.dropdown.map((subItem, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={subItem.href}
+                              className="block px-4 py-2 hover:bg-gray-700 transition"
+                            >
+                              {subItem.name}
+                            </Link>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <button onClick={item.onClick} className="text-gray-300 hover:text-white transition-colors
                       before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 
-                      before:bg-blue-400 before:transition-all hover:before:w-full"
-                  >
-                    {item.name}
-                  </Link>
-                )}
-              </li>
-            ))}
-          </ul>
-        </nav>
+                      before:bg-blue-400 before:transition-all hover:before:w-full">
+                      {item.name}
+                    </button>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        {/* LOGIN BUTTON */}
-        <Link to="/login" className="hidden md:block border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition">
-          Login
-        </Link>
+          {/* Login Button */}
+          <div className="hidden md:flex items-center">
+            <Link
+              to="/login"
+              className="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
+            >
+              Login
+            </Link>
+          </div>
 
-        {/* MOBILE MENU */}
-        <button className="md:hidden text-gray-300 hover:text-white">
-          <FiMenu size={24} />
-        </button>
-      </div>
-    </motion.header>
+          {/* Mobile Menu Button */}
+          <button className="md:hidden text-gray-300 hover:text-white">
+            <FiMenu size={24} />
+          </button>
+        </div>
+      </motion.header>
+      <ContactFormPopup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+    </>
   );
 };
 
