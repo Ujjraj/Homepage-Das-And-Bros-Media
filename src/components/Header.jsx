@@ -72,7 +72,7 @@ const Header = () => {
                       )}
                     </div>
                   ) : (
-                    <Link to={item.href} className="text-gray-300 hover:text-white transition-colors cursor-pointer before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all hover:before:w-full">
+                    <Link to={item.href} className="text-gray-300 hover:text-white transition-colors cursor-pointer before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all hover:before:w-full" onClick={item.onClick}>
                       {item.name}
                     </Link>
                   )}
