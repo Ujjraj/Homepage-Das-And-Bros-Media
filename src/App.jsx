@@ -7,6 +7,7 @@ import LoginRegister from "./pages/LoginRegister";
 import DigitalTransformation from "./pages/DigitalTransformation";
 import OtherServicesPartnerships from "./pages/OtherServicesPartnerships";
 import Hiring from "./pages/Hiring";
+import AboutUs from "./pages/AboutUs";
 import "./assets/global.css";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
     <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutUs />} />
         <Route path="/growth-marketing" element={<GrowthMarketing />} />
         <Route path="/cybersecurity" element={<Cybersecurity />} />
         <Route path="/digital-transformation" element={<DigitalTransformation />} />

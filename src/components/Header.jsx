@@ -52,7 +52,7 @@ const Header = () => {
                       onMouseEnter={() => setIsDropdownOpen(true)}
                       onMouseLeave={() => setIsDropdownOpen(false)}
                     >
-                      <button className="text-gray-300 hover:text-white flex items-center space-x-1">
+                      <button className="text-gray-300 hover:text-white flex items-center space-x-1 cursor-pointer">
                         {item.name}
                         <FiChevronDown size={14} />
                       </button>
@@ -72,11 +72,9 @@ const Header = () => {
                       )}
                     </div>
                   ) : (
-                    <button onClick={item.onClick} className="text-gray-300 hover:text-white transition-colors
-                      before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 
-                      before:bg-blue-400 before:transition-all hover:before:w-full">
+                    <Link to={item.href} className="text-gray-300 hover:text-white transition-colors cursor-pointer before:absolute before:-bottom-2 before:left-0 before:w-0 before:h-0.5 before:bg-blue-400 before:transition-all hover:before:w-full">
                       {item.name}
-                    </button>
+                    </Link>
                   )}
                 </li>
               ))}
@@ -87,7 +85,7 @@ const Header = () => {
           <div className="hidden md:flex items-center">
             <Link
               to="/login"
-              className="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition"
+              className="border border-white text-white px-4 py-2 rounded-lg hover:bg-white hover:text-black transition cursor-pointer"
             >
               Login
             </Link>
