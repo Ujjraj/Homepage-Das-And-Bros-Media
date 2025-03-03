@@ -29,7 +29,7 @@ const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className="sticky top-0 h-16 md:h-20 bg-black backdrop-blur-md z-50 border-b border-gray-700 flex items-center"
+        className={`sticky top-0 h-16 md:h-20 bg-black backdrop-blur-md z-50 border-b border-gray-700 flex items-center ${isPopupOpen ? 'blur-sm' : ''}`}
       >
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center w-full">
           {/* Logo */}

@@ -15,7 +15,7 @@ const ContactFormPopup = ({ isOpen, onClose }) => {
 
   return (
     isOpen && (
-      <div className="fixed inset-0 flex items-center justify-center z-50">
+      <div className="fixed inset-0 flex items-center justify-center z-50 backdrop-blur-sm">
         <motion.div
           className="bg-white rounded-lg p-6 shadow-lg w-11/12 md:w-1/3 border border-gray-300"
           initial={{ scale: 0 }}
